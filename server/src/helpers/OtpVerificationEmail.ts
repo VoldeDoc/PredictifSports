@@ -12,8 +12,21 @@ export const sendOtpVerificationEmail = async (name: string, email: string, otp:
             },
         });
 
+        await new Promise((resolve, reject) => {
+            // verify connection configuration
+            transporter.verify(function (error, success) {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                } else {
+                    console.log("Server is ready to take our messages");
+                    resolve(success);
+                }
+            });
+        });
+
         const mailOptions = {
-            from: { name: 'Predictif Sports', address: process.env.SMTP_USER as string},
+            from: { name: 'Predictif Sports', address: process.env.SMTP_USER as string },
             to: email,
             subject: 'OTP Verification',
             html: `
@@ -64,10 +77,10 @@ export const sendOtpVerificationEmail = async (name: string, email: string, otp:
                                     style="font-size: 16px; line-height: 30px; color: #ffffff;"
                                     >
                                     ${new Date().toLocaleDateString('en-NG', {
-                                            year: 'numeric',
-                                            month: 'short',
-                                            day: 'numeric',
-                                        })}
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+            })}
                                     </span
                                     >
                                 </td>
@@ -232,12 +245,16 @@ export const sendOtpVerificationEmail = async (name: string, email: string, otp:
             `,
         };
 
-        transporter.sendMail(mailOptions, (error, info) => {
-            if (error) {
-                console.log(error);
-            } else {
-                console.log('Email sent: ' + info.response);
-            }
+        await new Promise((resolve, reject) => {
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    console.log(error);
+                    reject(error);
+                } else {
+                    console.log('Email sent: ' + info.response);
+                    resolve(info);
+                }
+            });
         });
     } catch (error) {
         console.log(error);
