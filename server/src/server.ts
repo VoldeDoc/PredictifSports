@@ -9,7 +9,7 @@ import session from 'express-session';
 dotenv.config();
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL || 'http://localhost:3000',
+    origin: process.env.CLIENT_URL as string,
     credentials: true,
 };
 
