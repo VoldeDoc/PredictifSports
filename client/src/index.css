@@ -1,0 +1,130 @@
+/***** navbar *****/
+.navbar {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+}
+
+a.active {
+  color: #6506bd;
+}
+.navbar a {
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.collapse {
+  display: none;
+}
+@media screen and (max-width: 853px) {
+  .navbar a {
+    float: none;
+    display: none;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar .links {
+    /* background-color: red; */
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .navbar button.icon {
+    float: right;
+    display: block;
+    z-index: 9999;
+  }
+
+  .navbar.responsive {
+    position: relative;
+  }
+
+  .navbar.responsive .navbar-links {
+    background-color: rgb(252, 248, 248);
+    z-index: 9999;
+  }
+
+  .navbar.responsive button.icon {
+    position: absolute;
+    right: 0px;
+    top: 10px;
+  }
+
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .navbar.navbar.responsive a:hover {
+    background-color: #726969;
+  }
+
+  .navbar-links {
+    display: block;
+    width: 100%;
+  }
+}
+
+/***** End navbar *****/
+.hero {
+  background-image: url("/hand-holding-phone.png");
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* .holder{
+  display: grid !important;
+  place-items: center !important;
+} */
+/***** End home oage *****/
+
+/***** card *****/
+
+/***** End card *****/
+
+@media (max-width: 853px) {
+  /* styles for small screens */
+  .card-image {
+    margin: auto;
+    text-align: center;
+  }
+
+  .details {
+    display: flex;
+    flex-direction: column;
+  }
+  footer div.col-lg-3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .end-footer {
+    margin-top: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column !important;
+  }
+}
+
+/***** footer *****/
+footer {
+  background-color: #131314;
+  color: white;
+}
+
+/***** End footer *****/

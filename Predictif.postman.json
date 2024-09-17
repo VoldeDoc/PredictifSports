@@ -1,0 +1,645 @@
+{
+  "info": {
+    "name": "User API",
+    "description": "API documentation for user registration, login, OTP verification, OTP resending, authentication check, and logout",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"1234567890\",\n  \"password\": \"password123\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/user/auth/register",
+          "protocol": "http",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "api",
+            "user",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Success Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"1234567890\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/user/auth/register",
+              "protocol": "http",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "body": "{\n  \"success\": true,\n  \"message\": \"User registered successfully\"\n}",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        {
+          "name": "Error Response",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"phone\": \"1234567890\",\n  \"password\": \"password123\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/api/user/auth/register",
+              "protocol": "http",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "user",
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "body": "{\n  \"success\": false,\n  \"message\": \"An error occurred while registering the user\"\n}",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+        "name": "Login",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+          },
+          "url": {
+            "raw": "{{base_url}}/api/user/auth/login",
+            "protocol": "http",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "user",
+              "auth",
+              "login"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Success Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/login",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "login"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "body": "{\n  \"success\": true,\n  \"message\": \"User logged in successfully\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "Error Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/login",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "login"
+                ]
+              }
+            },
+            "status": "Unauthorized",
+            "code": 401,
+            "body": "{\n  \"success\": false,\n  \"message\": \"Invalid credentials\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Verify OTP",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"otp\": \"123456\"\n}"
+          },
+          "url": {
+            "raw": "{{base_url}}/api/user/auth/verify-otp",
+            "protocol": "http",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "user",
+              "auth",
+              "verify-otp"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Success Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"otp\": \"123456\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/verify-otp",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "verify-otp"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "body": "{\n  \"success\": true,\n  \"message\": \"OTP verified successfully\",\n  \"name\": \"John Doe\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "Error Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"otp\": \"123456\"\n}"
+              },
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/verify-otp",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "verify-otp"
+                ]
+              }
+            },
+            "status": "Bad Request",
+            "code": 400,
+            "body": "{\n  \"success\": false,\n  \"message\": \"Invalid OTP\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Resend OTP",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{base_url}}/api/user/auth/resend-otp",
+            "protocol": "http",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "user",
+              "auth",
+              "resend-otp"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Success Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/resend-otp",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "resend-otp"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "body": "{\n  \"success\": true,\n  \"message\": \"OTP resent successfully\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "Error Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/resend-otp",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "resend-otp"
+                ]
+              }
+            },
+            "status": "Bad Request",
+            "code": 400,
+            "body": "{\n  \"success\": false,\n  \"message\": \"An error occurred while resending the OTP\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Authenticated",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "description": "Optional"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{base_url}}/api/user/auth/authenticated",
+            "protocol": "http",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "user",
+              "auth",
+              "authenticated"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Success Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>",
+                  "description": "Optional"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/authenticated",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "authenticated"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "body": "{\n  \"success\": true,\n  \"user\": {\n    \"id\": \"1234567890\",\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\"\n  }\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "Error Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>",
+                  "description": "Optional"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/authenticated",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "authenticated"
+                ]
+              }
+            },
+            "status": "Unauthorized",
+            "code": 401,
+            "body": "{\n  \"success\": false,\n  \"message\": \"User not found\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Logout",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Authorization",
+              "value": "Bearer <token>",
+              "description": "Optional"
+            },
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "url": {
+            "raw": "{{base_url}}/api/user/auth/logout",
+            "protocol": "http",
+            "host": [
+              "{{base_url}}"
+            ],
+            "path": [
+              "api",
+              "user",
+              "auth",
+              "logout"
+            ]
+          }
+        },
+        "response": [
+          {
+            "name": "Success Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>",
+                  "description": "Optional"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/logout",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "logout"
+                ]
+              }
+            },
+            "status": "OK",
+            "code": 200,
+            "body": "{\n  \"success\": true,\n  \"message\": \"User logged out successfully\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          },
+          {
+            "name": "Error Response",
+            "originalRequest": {
+              "method": "POST",
+              "header": [
+                {
+                  "key": "Authorization",
+                  "value": "Bearer <token>",
+                  "description": "Optional"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "url": {
+                "raw": "{{base_url}}/api/user/auth/logout",
+                "protocol": "http",
+                "host": [
+                  "{{base_url}}"
+                ],
+                "path": [
+                  "api",
+                  "user",
+                  "auth",
+                  "logout"
+                ]
+              }
+            },
+            "status": "Bad Request",
+            "code": 400,
+            "body": "{\n  \"success\": false,\n  \"message\": \"An error occurred while logging out the user\"\n}",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ]
+          }
+        ]
+      }
+  ]
+}
