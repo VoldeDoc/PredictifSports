@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import userRouter from './src/routes/userRouter';
 import session from 'express-session';
 
+dotenv.config();
 
 
 
@@ -17,7 +18,6 @@ const PORT: string | number = process.env.PORT || 8080;
 const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/PredictifSport';
 
 
-dotenv.config();
 const app = express();
 app.use(session({
   secret: process.env.SESSION_SECRET as string,
