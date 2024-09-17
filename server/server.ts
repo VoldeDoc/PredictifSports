@@ -7,23 +7,25 @@ import userRouter from './src/routes/userRouter';
 import session from 'express-session';
 
 dotenv.config();
+console.log('CLIENT_URL:', process.env.CLIENT_URL);
 
 const corsOptions = {
-    origin: process.env.CLIENT_URL as string,
+    origin: '*',
     credentials: true,
 };
+
 const PORT: string | number = process.env.PORT || 8080;
 const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/PredictifSport';
 
 
 const app = express();
+app.use(cors(corsOptions));
 app.use(session({
   secret: process.env.SESSION_SECRET as string,
   resave: false,
   saveUninitialized: true,
   cookie: { secure: process.env.NODE_ENV === 'production'},
 }));
-app.use(cors(corsOptions));
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
