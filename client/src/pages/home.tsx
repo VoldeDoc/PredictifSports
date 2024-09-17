@@ -1,5 +1,3 @@
-import { useLoading } from '../utils/loader';
-import { useState } from 'react';
 import Typing from '../component/typed';
 import Charts from '../component/charts';
 import { AccordionBody } from '../component/accordion';
