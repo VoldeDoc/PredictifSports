@@ -3,14 +3,13 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import cookieParser from 'cookie-parser';
-import userRouter from './src/routes/userRouter';
+import userRouter from './routes/userRouter';
 import session from 'express-session';
 
 dotenv.config();
-console.log('CLIENT_URL:', process.env.CLIENT_URL);
 
 const corsOptions = {
-    origin: '*',
+    origin: process.env.CLIENT_URL || 'http://localhost:3000',
     credentials: true,
 };
 
@@ -21,10 +20,10 @@ const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/PredictifSport
 const app = express();
 app.use(cors(corsOptions));
 app.use(session({
-  secret: process.env.SESSION_SECRET as string,
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: process.env.NODE_ENV === 'production'},
+    secret: process.env.SESSION_SECRET as string,
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: process.env.NODE_ENV === 'production' },
 }));
 app.use(cookieParser());
 app.use(express.json());
