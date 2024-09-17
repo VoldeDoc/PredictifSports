@@ -8,6 +8,8 @@ import session from 'express-session';
 
 dotenv.config();
 
+console.log(process.env.CLIENT_URL);
+
 const corsOptions = {
     origin: process.env.CLIENT_URL as string,
     credentials: true,
