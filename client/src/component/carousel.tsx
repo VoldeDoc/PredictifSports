@@ -1,5 +1,4 @@
 import { cardData } from './card'
-import { Carousel } from "flowbite-react";
 
 export default function CarouselHolder() {
    return(
