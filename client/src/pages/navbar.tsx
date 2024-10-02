@@ -17,7 +17,7 @@ export default function Navbar() {
                     <div className="flex justify-between items-center w-full links">
                         <div className="navbar-brand">
                             <Link to="/">
-                                <img src="/Logo.png" alt="navbar logo" className="logo w-30 h-24" />
+                                <img src="/Logo.png" alt="navbar logo" className="logo " width="300" height="24" />
                             </Link>
                         </div>
                         <div className="flex justify-center w-full">

@@ -16,8 +16,8 @@ export default function Footer() {
             </p>
           </div>
           <div className="col-lg-6 pb-5">
-            <div className="flex space-x-36">
-              <div>
+            <div className="flex flex-col sm:flex-row sm:space-x-36">
+              <div className="mb-4 sm:mb-0">
                 <p>Call us</p>
                 <a href="tel:+434243" className="text-blue-600">
                   +62 (385) 5025004
@@ -34,7 +34,7 @@ export default function Footer() {
         </div>
         <hr className="text-white" />
         <div className="row mb-11 py-11">
-          <div className="col-lg-2">
+          <div className="col-lg-2 mb-5 sm:mb-0">
             <h1 className="font-bold text-lg">Quick links</h1>
             <ul>
               <li className="hover:text-slate-900">
@@ -44,7 +44,7 @@ export default function Footer() {
                 <a href="#">About Us</a>
               </li>
               <li className="hover:text-slate-900">
-                <a href="#">Fearures</a>
+                <a href="#">Features</a>
               </li>
               <li className="hover:text-slate-900">
                 <a href="#">Solution</a>
@@ -54,7 +54,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-lg-2 pb-5">
+          <div className="col-lg-2 mb-5 sm:mb-0">
             <h1 className="font-bold text-lg">Services</h1>
             <ul>
               <li className="hover:text-slate-900">
@@ -77,7 +77,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-lg-2 pb-5">
+          <div className="col-lg-2 mb-5 sm:mb-0">
             <h1 className="font-bold text-lg">Resource</h1>
             <ul>
               <li className="hover:text-slate-900">
@@ -97,7 +97,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-lg-2 pb-5">
+          <div className="col-lg-2 mb-5 sm:mb-0">
             <h1 className="font-bold text-lg">Social</h1>
             <ul>
               <li className="hover:text-slate-900">
@@ -114,7 +114,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          <div className="col-lg-2 pb-5">
+          <div className="col-lg-2 mb-5 sm:mb-0">
             <h1 className="font-bold text-lg">Legal</h1>
             <ul>
               <li className="hover:text-slate-900">
@@ -133,7 +133,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="end-footer text-right">
+        <div className="end-footer text-center sm:text-right">
           <div className="copyright">
             <span>
               Copyright © 2023 Axpos By Jegtheme. All rights reserved.
