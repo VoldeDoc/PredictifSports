@@ -15,13 +15,15 @@ import toast, { Toaster, ToastBar } from "react-hot-toast";
 import { FaCheckCircle, FaExclamationTriangle, FaTimes } from "react-icons/fa";
 import { BiLoaderAlt } from "react-icons/bi";
 import "react-loading-skeleton/dist/skeleton.css";
+import Dashboard from "./pages/dashboard";
 
 const App = () => {
   const location = useLocation();
   const hideHeaderFooter =
     location.pathname === "/login" ||
     location.pathname === "/register" ||
-    location.pathname === "/verification";
+    location.pathname === "/verification" ||
+    location.pathname === "/dashboard"
 
   return (
     <>
@@ -81,6 +83,7 @@ const App = () => {
             <Route path="/verification" element={<Otp />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="*" element={<NotFound />} />{" "}
             {/* Catch-all route for 404 */}
           </Routes>
