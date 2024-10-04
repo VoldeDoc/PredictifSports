@@ -1,9 +1,5 @@
 import Navbar from "./pages/navbar";
-import {
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home";
 import Footer from "./pages/footer";
 import Signup from "./pages/signup";
@@ -15,7 +11,7 @@ import toast, { Toaster, ToastBar } from "react-hot-toast";
 import { FaCheckCircle, FaExclamationTriangle, FaTimes } from "react-icons/fa";
 import { BiLoaderAlt } from "react-icons/bi";
 import "react-loading-skeleton/dist/skeleton.css";
-import Dashboard from "./pages/dashboard";
+import Dashboard from "./pages/Dashboard";
 
 const App = () => {
   const location = useLocation();
@@ -23,7 +19,7 @@ const App = () => {
     location.pathname === "/login" ||
     location.pathname === "/register" ||
     location.pathname === "/verification" ||
-    location.pathname === "/dashboard"
+    location.pathname === "/dashboard";
 
   return (
     <>
@@ -76,19 +72,20 @@ const App = () => {
         )}
       </Toaster>
 
-        {!hideHeaderFooter && <Navbar />}
-        <LoadingProvider>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/verification" element={<Otp />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Signup />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="*" element={<NotFound />} />{" "}
-            {/* Catch-all route for 404 */}
-          </Routes>
-        </LoadingProvider>
-        {!hideHeaderFooter && <Footer />}
+      {!hideHeaderFooter && <Navbar />}
+      <LoadingProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/verification" element={<Otp />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/payment" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />{" "}
+          {/* Catch-all route for 404 */}
+        </Routes>
+      </LoadingProvider>
+      {!hideHeaderFooter && <Footer />}
     </>
   );
 };

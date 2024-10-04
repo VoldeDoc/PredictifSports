@@ -109,8 +109,8 @@ export default function Home() {
                             </div>
                         </div>
                         <div className="col-lg-6">
-                            <div className="bg-gray-300 px-14 py-48">
-                                <Charts />
+                            <div className="bg-gray-300 px-14 py-48" style={{marginRight:"20px"}}>
+                                <Charts  />
                             </div>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ export default function Home() {
                         <li data-bs-target="#carouselId" data-bs-slide-to="2" aria-label="Third slide"></li>
                     </ol>
                     <div className="carousel-inner" role="listbox">
-                        <div className="carousel-item active w-96">
+                        <div className="carousel-item active text-center pt-20 px-20">
                           <div className="flex space-x-3">
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />
@@ -231,7 +231,7 @@ export default function Home() {
                                 <p className="text-white">Restaurant owner</p>
                             </div>
                         </div>
-                        <div className="carousel-item w-96">
+                        <div className="carousel-item text-center pt-20 px-20">
                         <div className="flex space-x-3">
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />
@@ -249,7 +249,7 @@ export default function Home() {
                                 <p className="text-white">Restaurant owner</p>
                             </div>
                         </div>
-                        <div className="carousel-item w-96">
+                        <div className="carousel-item text-center pt-20 px-20">
                         <div className="flex space-x-3">
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />
                           <img src="https://img.icons8.com/?size=100&id=qdQpy48X3Rjv&format=png&color=000000" className='w-4 h-5' alt="" />

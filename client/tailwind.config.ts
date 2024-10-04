@@ -1,7 +1,6 @@
+import type { Config } from 'tailwindcss'
 import flowbite from "flowbite-react/tailwind";
-import { colors } from "tailwindcss/colors";
-import { plugin } from "flowbite/plugin";
-/** @type {import('tailwindcss').Config} */
+
 export default {
   content: [
     './src/**/*.{js,jsx,ts,tsx}', 
@@ -11,12 +10,13 @@ export default {
   ],
   darkMode: 'selector',
   theme: {
-    colors: colors,
+    // colors: colors,
+    extend: {},
   },
   variants: {
     extend: {},
   },
   plugins: [
-    plugin
+    flowbite.plugin()
   ]
-}
+} as Config;

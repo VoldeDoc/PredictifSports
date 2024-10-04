@@ -38,9 +38,7 @@ export const loginValidation = [
 ];
 
 export const verifyOTPValidation = [
-    body('otp').notEmpty().withMessage('OTP is required').isNumeric().withMessage('OTP must be numeric').isLength({ min: 4, max: 4 }).withMessage('OTP must be 4 characters long').custom(async (value, { req }) => {
-        console.log((req.session as any).userId);
-        
+    body('otp').notEmpty().withMessage('OTP is required').isNumeric().withMessage('OTP must be numeric').isLength({ min: 4, max: 4 }).withMessage('OTP must be 4 characters long').custom(async (value, { req }) => {        
         const user = await User.findById((req.session as any).userId);
         if (!user) {
             throw new Error('Something went wrong. Please try logging in again');
